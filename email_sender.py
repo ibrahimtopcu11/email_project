@@ -15,19 +15,20 @@ def send_email(to_email, subject, message, config, password):
     msg["To"] = to_email
     msg.set_content(message)
 
-    with smtplib.SMTP(config["smtp_server"], config["smtp_port"]) as server:
-        server.starttls()
+    with smtplib.SMTP_SSL(config["smtp_server"], config["smtp_port"]) as server:
         server.login(config["server_email"], password)
         server.send_message(msg)
 
 if __name__ == "__main__":
     who = os.environ.get("WHO", "").strip().lower()
     if who not in Users:
-        raise ValueError("User not found in Users dictionary.")
+        print("User not found in Users dictionary.")
+        exit(1)  
 
     message = os.environ.get("MESSAGE", f"Hello {who.capitalize()}")
     config = load_config()
     to_email = Users[who]
-    password = os.environ["EMAIL_PASSWORD"]  
+    password = os.environ["EMAIL_PASSWORD"]
 
     send_email(to_email, "Automated Message", message, config, password)
+    print(f" Email sent successfully to {to_email}")
