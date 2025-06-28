@@ -22,8 +22,7 @@ def send_email(to_email, subject, message, config, password):
 if __name__ == "__main__":
     who = os.environ.get("WHO", "").strip().lower()
     if who not in Users:
-        print("User not found in Users dictionary.")
-        exit(1)  
+        print("User not found in Users dictionary.") 
 
     message = os.environ.get("MESSAGE", f"Hello {who.capitalize()}")
     config = load_config()

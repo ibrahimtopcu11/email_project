@@ -22,6 +22,6 @@ jobs:
       - name: Send email automatically
         env:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          WHO: berk
+          WHO: ibrahim
           MESSAGE: ${{ secrets.REPO_KEY }}
         run: python email_sender.py
