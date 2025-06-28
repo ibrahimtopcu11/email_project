@@ -1,4 +1,4 @@
 Users = {
-    "Deniz": "ibrahimtpc193@gmail.com",
+    "berk": "banbar@hacettepe.edu.tr",
     "ibrahim": "ibrahimtopcu@hacettepe.edu.tr"
 }
