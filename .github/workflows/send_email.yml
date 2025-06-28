@@ -1,4 +1,4 @@
-name: Send Email 
+name: Send Email on Push
 
 on:
   push:
@@ -19,9 +19,9 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml
 
-      - name: Send email automatically
+      - name: Send email automatically with commit message
         env:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           WHO: ibrahim
-          MESSAGE: "Test from GitHub"
+          MESSAGE: ${{ github.event.head_commit.message }}
         run: python email_sender.py
