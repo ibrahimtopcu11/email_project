@@ -1,0 +1,3 @@
+server_email: "ibrahimtopcu@hacettepe.edu.tr"
+smtp_server: "mail.hacettepe.edu.tr"
+smtp_port: 465
