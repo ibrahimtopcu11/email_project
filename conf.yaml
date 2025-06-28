@@ -1,3 +1,3 @@
-server_email: "ibrahimtopcu@hacettepe.edu.tr"
-smtp_server: "mail.hacettepe.edu.tr"
+server_email: "ibrahimtpc193@gmail.com"
+smtp_server: "smtp.gmail.com"
 smtp_port: 465
